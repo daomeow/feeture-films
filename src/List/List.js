@@ -3,8 +3,9 @@ import Movie from '../Movie/Movie';
 import './List.css';
 
 const List = ({movies}) => {
-
-  const movieCards = movies.map(movie => (
+// refactor to not use movie component and simply display posters
+// only use the movie component on click of a poster
+const movieCards = movies.map(movie => (
     <Movie
        title={movie.title}
        description={movie.description}
@@ -12,7 +13,7 @@ const List = ({movies}) => {
        key={movie.id}
        />
    ))
- 
+
    return (
      <div className='movies-container'>
        {movieCards}
