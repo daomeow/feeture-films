@@ -1,11 +1,17 @@
 import React from 'react';
 import './Movie.css';
 
-const Movie = ({ title, description, id }) =>
+const Movie = ({ posterPath, title, onClick, id }) =>
  (
  <div className='card'>
-  <h3>{title}</h3>
-  <p>{description}</p>
+  <img 
+    className='poster' 
+    src={posterPath}
+    alt={title}
+    onClick={() => onClick(id)}    
+    id={id}
+  />
+  
  </div>
  )
 
