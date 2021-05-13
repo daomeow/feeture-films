@@ -13,7 +13,8 @@ export default class App extends Component {
   }
   
   handleClick = (id) => {
-    console.log(id)
+    const currentMovie = this.state.movies.find(movie => movie.id === id);
+    this.setState({ clickedMovie : currentMovie});
   }
 
   render() {
