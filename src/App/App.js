@@ -15,7 +15,7 @@ export default class App extends Component {
   
   handleClick = (id) => {
     const currentMovie = this.state.movies.find(movie => movie.id === id);
-    this.setState({ clickedMovie : currentMovie});
+    this.setState({ clickedMovie : currentMovie });
   }
 
   render() {
@@ -24,6 +24,7 @@ export default class App extends Component {
         <h1>Rancid Tomatillos</h1>
         {this.state.clickedMovie ?
         <MovieDetails
+          movieInfo={this.state.clickedMovie}
         />
         :<List 
           movies={this.state.movies} 
