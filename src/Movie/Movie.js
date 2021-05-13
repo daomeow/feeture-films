@@ -9,4 +9,7 @@ const Movie = ({ title, description, id }) =>
  </div>
  )
 
+
+ 
+
   export default Movie;
