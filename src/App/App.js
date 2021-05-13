@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import List from '../List/List';
 import './App.css';
 import movieData from '../sample-data';
+import MovieDetails from '../MovieDetails/MovieDetails';
 
 export default class App extends Component {
   constructor() {
@@ -20,12 +21,17 @@ export default class App extends Component {
   render() {
     return (
       <main className='App'>
-        <h1>Rancid Tomatillos</h1> 
-        <List 
+        <h1>Rancid Tomatillos</h1>
+        {this.state.clickedMovie ?
+        <MovieDetails
+        />
+        :<List 
           movies={this.state.movies} 
           onClick={this.handleClick}  
         />
+        } 
       </main>
     )
   }
 }
+
