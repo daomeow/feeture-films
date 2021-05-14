@@ -1,6 +1,9 @@
 .movies-container {
-  padding: 20px;
+  padding: 30px 50px 30px 50px;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px 20px;
+  justify-content: center;
+  align-content: center;
+  background-color: #25283D;
 }
