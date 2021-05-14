@@ -1,0 +1,13 @@
+.details-container {
+  display: flex;
+}
+
+.details-poster {
+  width: 200px;
+
+}
+
+.backdrop {
+  width: 100%;
+  height: 500px;
+}
