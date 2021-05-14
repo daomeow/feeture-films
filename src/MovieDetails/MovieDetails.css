@@ -4,22 +4,57 @@
 
 .movie-details {
   display: flex;
+  color: aliceblue;
 }
-.details-container {
+.left-container {
   display: flex;
   flex-direction: column;
+  background-color: black;
+  width: 40rem;
+}
+
+.fa-home{
+  font-size: 20px;
+  margin-right: 20em;
+  padding-top: 20px;
 }
 
 .top-details {
   display: flex;
-
+  justify-content: center;
 }
 
-.details-poster {
+.details-poster { 
   width: 150px;
   height: 200px;
+  margin-top: 25px;
 }
 
+.details-title {
+  font-size: 25px;
+  margin: 25px 0 0 0;
+}
+
+.tagline {
+  margin: 5px 0 0 10px;
+}
+
+.fa-star {
+  margin-right: 5px;
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.budget,
+.revenue,
+.genres {
+  border: 1px solid white;
+  width: 6em;
+  padding: 10px;
+}
 
 
 .backdrop {
