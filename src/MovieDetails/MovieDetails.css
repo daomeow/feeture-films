@@ -1,11 +1,26 @@
+/* * {
+  border: 1px solid red
+} */
+
+.movie-details {
+  display: flex;
+}
 .details-container {
   display: flex;
+  flex-direction: column;
+}
+
+.top-details {
+  display: flex;
+
 }
 
 .details-poster {
-  width: 200px;
-
+  width: 150px;
+  height: 200px;
 }
+
+
 
 .backdrop {
   width: 100%;
