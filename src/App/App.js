@@ -3,13 +3,15 @@ import List from '../List/List';
 import './App.css';
 import movieData from '../sample-data';
 import MovieDetails from '../MovieDetails/MovieDetails';
+import { json } from 'body-parser';
 
 export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: movieData.movies,
-      clickedMovie: null
+      movies: [],
+      clickedMovie: null,
+      error: ''
     }
   }
   
@@ -18,16 +20,32 @@ export default class App extends Component {
     this.setState({ clickedMovie : currentMovie });
   }
 
+  componentDidMount() {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({movies: data.movies})
+      })
+      .catch(error => console.log(error))
+  }
 
   render() {
     return (
       <main className='App'>
         <h1>Rancid Tomatillos</h1>
-        {this.state.clickedMovie ?
+        {this.state.error && !this.state.movies.length &&
+        <h2>{this.state.error}</h2>
+        }
+        {this.state.clickedMovie &&
         <MovieDetails
           movieInfo={this.state.clickedMovie}
         />
-        :<List 
+        }
+        {!this.state.movies.length && !this.state.error &&
+        <h2>Loading Movies...</h2>
+        }
+        {!this.state.error && !this.state.clickedMovie &&
+        <List 
           movies={this.state.movies} 
           onClick={this.handleClick}  
         />
