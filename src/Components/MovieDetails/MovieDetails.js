@@ -3,10 +3,11 @@ import movieData from '../../sample-data';
 import './MovieDetails.css';
 
 const MovieDetails =({ movieInfo }) => {
-  const { poster_path, title, average_rating, release_date, backdrop_path } = movieInfo; 
+  const { poster_path, title, average_rating, release_date, backdrop_path, overview, budget, revenue, genres, tagline, runtime } = movieInfo; 
   const roundedRating = Math.round(average_rating); 
-  console.log(movieInfo)
-  // const yearOnly = release_date.split('-').shift();
+  const yearOnly = release_date.split('-').shift();
+  const newBudget = budget.toLocaleString();
+  const newRevenue = revenue.toLocaleString();
 
   return (
     <div className='movie-details'>
@@ -16,19 +17,18 @@ const MovieDetails =({ movieInfo }) => {
           <img src={poster_path} alt='Movie poster' className='details-poster'/>
           <div className='general-info'>
             <h3 className='details-title'>{title}</h3>
-            <p className='tagline'>"The flower that blooms.."</p>
+            <p className='tagline'>{tagline}</p>
             <p><i className="fas fa-star"></i>{roundedRating}/10</p>
             <div className='details-data'>
-
-              <sub className='year-details'>{release_date}</sub><sub  className='minutes-details'>120 minutes</sub>
+              <sub className='year-details'>{yearOnly}</sub><sub  className='minutes-details'>{runtime} minutes</sub>
             </div>
           </div>
         </div>
-        <p>OVERVIEW OVERVIEW OVERVIEW OVERVIEW OVERVIEWOVERVIEW OVERVIEW OVERVIEW OVERVIEW OVERVIEWOVERVIEW OVERVIEW OVERVIEW OVERVIEW OVERVIEWOVERVIEW OVERVIEW OVERVIEW OVERVIEW OVERVIEWOVERVIEW OVERVIEW OVERVIEW OVERVIEW OVERVIEWOVERVIEW OVERVIEW OVERVIEW OVERVIEW </p>
+        <p>{overview}</p>
         <div className='bottom-container'>
-          <p className='budget'>Budget: $1M</p>
-          <p className='revenue'>Revenue: $1M</p>
-          <p className='genres'>Genres: Action</p>
+          <p className='budget'>Budget: ${newBudget}</p>
+          <p className='revenue'>Revenue: ${newRevenue}</p>
+          <p className='genres'>Genres: {genres}</p>
         </div>
       </div>
       <img src={backdrop_path} alt='Movie backdrop' className='backdrop'/>
@@ -37,6 +37,3 @@ const MovieDetails =({ movieInfo }) => {
 } 
 
 export default MovieDetails;
-
-/* <button goHome={() => goHome()}><i className="fas fa-home"></i></button> */
-/* <i className="fas fa-home" goHome={() => goHome()}></i> */

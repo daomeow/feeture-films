@@ -18,26 +18,10 @@ export default class App extends Component {
   
   handleClick = (id) => {
     findMovie(id)
-    .then(movie => {
-      const info = movie.movie
-      console.log(info)
-      this.setState({
-        clickedMovie: info 
-        // {
-        //   average_rating: info.average_rating,
-        //   backdrop_path: info.backdrop_path,
-        //   budget: this.numberWithCommas(info.budget),
-        //   genres: info.genres.join(', '), id: info.id,
-        //   overview: info.overview,
-        //   poster_path: info.poster_path,
-        //   release_date: info.release_date,
-        //   revenue: this.numberWithCommas(info.revenue),
-        //   runtime: info.runtime, tagline: info.tagline,
-        //   title: info.title
-        // }
+      .then(movie => {
+        this.setState({ clickedMovie: movie.movie })
       })
-    })
-    .catch(error => this.setState({ error }))
+      .catch(error => this.setState({ error }))
   }
 
   componentDidMount() {
