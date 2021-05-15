@@ -5,7 +5,8 @@ import './MovieDetails.css';
 const MovieDetails =({ movieInfo }) => {
   const { poster_path, title, average_rating, release_date, backdrop_path } = movieInfo; 
   const roundedRating = Math.round(average_rating); 
-  const yearOnly = release_date.split('-').shift();
+  console.log(movieInfo)
+  // const yearOnly = release_date.split('-').shift();
 
   return (
     <div className='movie-details'>
@@ -18,7 +19,8 @@ const MovieDetails =({ movieInfo }) => {
             <p className='tagline'>"The flower that blooms.."</p>
             <p><i className="fas fa-star"></i>{roundedRating}/10</p>
             <div className='details-data'>
-              <sub className='year-details'>{yearOnly}</sub><sub  className='minutes-details'>120 minutes</sub>
+
+              <sub className='year-details'>{release_date}</sub><sub  className='minutes-details'>120 minutes</sub>
             </div>
           </div>
         </div>
