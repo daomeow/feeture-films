@@ -18,6 +18,7 @@ export default class App extends Component {
     this.setState({ clickedMovie : currentMovie });
   }
 
+
   render() {
     return (
       <main className='App'>

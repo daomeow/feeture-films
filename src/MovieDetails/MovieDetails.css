@@ -2,62 +2,97 @@
   border: 1px solid red
 } */
 
-.movie-details {
-  display: flex;
-  color: aliceblue;
-}
-.left-container {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-  width: 40rem;
+@media screen and (min-device-width: 320px) {
+  .movie-details {
+    display: flex;
+    color: aliceblue;
+    background-color: #25283D;
+  }
+
+  .left-container {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    /* width: 40rem; */
+  }
+
+  .fa-home{
+    font-size: 20px;
+    margin-right: 15em;
+    padding-top: 20px;
+  }
+
+  .top-details {
+    display: flex;
+    justify-content: center;
+  }
+
+  .details-poster { 
+    width: 150px;
+    height: 200px;
+    margin-top: 25px;
+  }
+
+  .details-title {
+    font-size: 25px;
+    margin: 25px 0 0 0;
+  }
+
+  .tagline {
+    margin: 5px 0 0 10px;
+  }
+
+  .fa-star {
+    margin-right: 5px;
+  }
+
+  .year-details,
+  .minutes-details {
+    border: 1px solid white;
+    padding: 5px;
+  }
+
+  .bottom-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .budget,
+  .revenue,
+  .genres {
+    border: 1px solid white;
+    width: 6em;
+    padding: 10px;
+  }
+
+  .backdrop {
+    display: none;
+  }
 }
 
-.fa-home{
-  font-size: 20px;
-  margin-right: 20em;
-  padding-top: 20px;
+@media screen and (min-width: 768px) {
+  /* .movie-details {
+  } */
+
+  .backdrop {
+    width: 100%;
+    height: 500px;
+    opacity:0.4;
+    display: inline-block;
+  }
 }
 
-.top-details {
-  display: flex;
-  justify-content: center;
-}
+@media screen and (min-width: 1400px) {
+  /* .backdrop {
+    width: 100%;
+    height: 500px;
+    opacity:0.4;
+  } */
+  .left-container {
+    width: 40rem;
+  }
 
-.details-poster { 
-  width: 150px;
-  height: 200px;
-  margin-top: 25px;
-}
-
-.details-title {
-  font-size: 25px;
-  margin: 25px 0 0 0;
-}
-
-.tagline {
-  margin: 5px 0 0 10px;
-}
-
-.fa-star {
-  margin-right: 5px;
-}
-
-.bottom-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-.budget,
-.revenue,
-.genres {
-  border: 1px solid white;
-  width: 6em;
-  padding: 10px;
-}
-
-
-.backdrop {
-  width: 100%;
-  height: 500px;
+  .fa-home{
+    margin-right: 20em;
+  }
 }
