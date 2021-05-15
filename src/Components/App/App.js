@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import List from '../List/List';
 import './App.css';
-import movieData from '../sample-data';
+import movieData from '../../sample-data';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import { json } from 'body-parser';
+import { getMovies } from '../../apiCalls';
 
 export default class App extends Component {
   constructor() {
@@ -21,12 +22,11 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => response.json())
+      getMovies()
       .then(data => {
-        this.setState({movies: data.movies})
+        this.setState({ movies: data.movies })
       })
-      .catch(error => console.log(error))
+      .catch(error => this.setState({ error }))
   }
 
   render() {

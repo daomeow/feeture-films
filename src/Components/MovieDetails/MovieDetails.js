@@ -1,5 +1,5 @@
 import React from 'react';
-import movieData from '../sample-data';
+import movieData from '../../sample-data';
 import './MovieDetails.css';
 
 const MovieDetails =({ movieInfo }) => {
