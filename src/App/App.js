@@ -7,16 +7,23 @@ export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: movieData.movies
-    // view: list or movie
+      movies: movieData.movies,
+      clickedMovie: null
     }
   }
   
+  handleClick = (id) => {
+    console.log(id)
+  }
+
   render() {
     return (
       <main className='App'>
         <h1>Rancid Tomatillos</h1> 
-        <List movies={this.state.movies} />
+        <List 
+          movies={this.state.movies} 
+          onClick={this.handleClick}  
+        />
       </main>
     )
   }
