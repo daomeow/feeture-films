@@ -8,6 +8,7 @@ const MovieDetails =({ movieInfo }) => {
   const yearOnly = release_date.split('-').shift();
   const newBudget = budget.toLocaleString();
   const newRevenue = revenue.toLocaleString();
+  const newGenres = genres.join(', ')
 
   return (
     <div className='movie-details'>
@@ -24,11 +25,11 @@ const MovieDetails =({ movieInfo }) => {
             </div>
           </div>
         </div>
-        <p>{overview}</p>
+        <p className='over-view'>{overview}</p>
         <div className='bottom-container'>
-          <p className='budget'>Budget: ${newBudget}</p>
-          <p className='revenue'>Revenue: ${newRevenue}</p>
-          <p className='genres'>Genres: {genres}</p>
+          <p className='budget'>Budget: {budget > 0 ? '$'+ newBudget : 'unknown'}</p>
+          <p className='revenue'>Revenue: {budget > 0 ? '$'+ newRevenue : 'unknown'}</p>
+          <p className='genres'>Genres: {newGenres}</p>
         </div>
       </div>
       <img src={backdrop_path} alt='Movie backdrop' className='backdrop'/>
