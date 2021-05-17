@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import List from '../List/List';
 import './App.css';
-import movieData from '../sample-data';
+import movieData from '../../sample-data';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import { json } from 'body-parser';
+import { getAllMovies, findMovie } from '../../apiCalls';
 
 export default class App extends Component {
   constructor() {
@@ -16,17 +17,19 @@ export default class App extends Component {
   }
   
   handleClick = (id) => {
-    const currentMovie = this.state.movies.find(movie => movie.id === id);
-    this.setState({ clickedMovie : currentMovie });
+    findMovie(id)
+      .then(movie => {
+        this.setState({ clickedMovie: movie.movie })
+      })
+      .catch(error => this.setState({ error }))
   }
 
   componentDidMount() {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => response.json())
+    getAllMovies()
       .then(data => {
-        this.setState({movies: data.movies})
+        this.setState({ movies: data.movies })
       })
-      .catch(error => console.log(error))
+      .catch(error => this.setState({ error: "Something went wrong" }))
   }
 
   render() {
@@ -34,21 +37,21 @@ export default class App extends Component {
       <main className='App'>
         <h1>Rancid Tomatillos</h1>
         {this.state.error && !this.state.movies.length &&
-        <h2>{this.state.error}</h2>
+          <h2>{this.state.error}</h2>
         }
         {this.state.clickedMovie &&
-        <MovieDetails
-          movieInfo={this.state.clickedMovie}
-        />
+          <MovieDetails
+            movieInfo={this.state.clickedMovie}
+          />
         }
         {!this.state.movies.length && !this.state.error &&
-        <h2>Loading Movies...</h2>
+          <h2>Loading Movies...</h2>
         }
         {!this.state.error && !this.state.clickedMovie &&
-        <List 
-          movies={this.state.movies} 
-          onClick={this.handleClick}  
-        />
+          <List 
+            movies={this.state.movies} 
+            onClick={this.handleClick}  
+          />
         } 
       </main>
     )
