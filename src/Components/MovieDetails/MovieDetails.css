@@ -46,8 +46,8 @@
     margin: 5px 0 0 10px;
   }
 
-  .fa-star {
-    margin-right: 5px;
+  .details-data {
+    margin-left: 10px;
   }
 
   .year-details,
@@ -83,34 +83,88 @@
 }
 
 @media screen and (min-width: 768px) {
-  /* .movie-details {
-  } */
+  .left-container {
+    width: 45em;
+    margin-left: 25px;
+  } 
 
-    /* .left-container {
-    display: flex;
-    flex-direction: column;
-    background-color: black;
-  } */
-
-  .backdrop {
-    width: 100%;
-    height: 500px;
-    opacity:0.4;
-    display: inline-block;
+  .details-poster {
+    width: 12em;
+    height: 18em;
   }
+
+  .details-title {
+    font-size: 3em;
+    margin: 45px 0 0 45px;
+  }
+
+  .movie-rating {
+    font-size: 25px;;
+  }
+
+  .details-data {
+    margin-left: 35px;
+  }
+
+  .year-details,
+  .minutes-details {
+    font-size: 20px
+  }
+  
+  .over-view {
+    font-size: 25px;
+  }
+
+  .budget,
+  .revenue,
+  .genres {
+    font-size: 20px;
+  }
+    
 }
 
-@media screen and (min-width: 1400px) {
-  /* .backdrop {
-    width: 100%;
-    height: 500px;
-    opacity:0.4;
-  } */
-  .left-container {
-    width: 40rem;
+@media screen and (min-width: 769px) {
+  /* Update with Sass, same size as mobile view */
+  .details-poster {
+    width: 150px;
+    height: 200px;
+  }
+  
+  .details-title {
+    font-size: 25px;
+    margin: 25px 0 0 0;
+  }
+  
+  .movie-rating {
+    font-size: 16px;;
+  }
+  
+  .year-details,
+  .minutes-details {
+    font-size: 12px
+  }
+  
+  .over-view {
+    font-size: 15px;
+  }
+  
+  .budget,
+  .revenue,
+  .genres {
+    font-size: 14px;
   }
 
   .fa-home{
     margin-right: 20em;
   }
+
+  .backdrop {
+    width: 100%;
+    height: 535px;
+    opacity:0.4;
+    display: inline-block;
+    box-shadow:  5px 5px 10px #8F3985,
+    -5px -5px 10px #A675A1;
+    margin-right: 25px;
+  } 
 }

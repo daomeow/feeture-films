@@ -19,7 +19,7 @@ const MovieDetails =({ movieInfo }) => {
           <div className='general-info'>
             <h3 className='details-title'>{title}</h3>
             <p className='tagline'>{tagline}</p>
-            <p><i className="fas fa-star"></i>{roundedRating}/10</p>
+            <p className='movie-rating'><i className="fas fa-star"></i>{roundedRating}/10</p>
             <div className='details-data'>
               <sub className='year-details'>{yearOnly}</sub><sub  className='minutes-details'>{runtime} minutes</sub>
             </div>
@@ -38,3 +38,11 @@ const MovieDetails =({ movieInfo }) => {
 } 
 
 export default MovieDetails;
+
+
+
+
+
+
+
+
