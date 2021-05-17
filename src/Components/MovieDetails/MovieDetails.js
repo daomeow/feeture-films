@@ -1,5 +1,4 @@
 import React from 'react';
-import movieData from '../../sample-data';
 import './MovieDetails.css';
 
 const MovieDetails =({ movieInfo }) => {
@@ -8,7 +7,7 @@ const MovieDetails =({ movieInfo }) => {
   const yearOnly = release_date.split('-').shift();
   const newBudget = budget.toLocaleString();
   const newRevenue = revenue.toLocaleString();
-  const newGenres = genres.join(', ')
+  const newGenres = genres.join(', ');
 
   return (
     <div className='movie-details'>
@@ -27,8 +26,8 @@ const MovieDetails =({ movieInfo }) => {
         </div>
         <p className='over-view'>{overview}</p>
         <div className='bottom-container'>
-          <p className='budget'>Budget: {budget > 0 ? '$'+ newBudget : 'unknown'}</p>
-          <p className='revenue'>Revenue: {budget > 0 ? '$'+ newRevenue : 'unknown'}</p>
+          <p className='budget'>Budget: {budget > 0 ? '$' + newBudget : 'unknown'}</p>
+          <p className='revenue'>Revenue: {budget > 0 ? '$' + newRevenue : 'unknown'}</p>
           <p className='genres'>Genres: {newGenres}</p>
         </div>
       </div>
