@@ -29,7 +29,7 @@ export default class App extends Component {
       .then(data => {
         this.setState({ movies: data.movies })
       })
-      .catch(error => this.setState({ error }))
+      .catch(error => this.setState({ error: "Something went wrong" }))
   }
 
   render() {
