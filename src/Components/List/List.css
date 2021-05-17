@@ -34,12 +34,24 @@
   }
 }
 
-@media all and (min-width: 900px) {
+@media all and (orientation:landscape and min-height: 750px)  {
   .movies-container {
-    padding: 20px 80px 60px;
+    padding: 10px 40px 10px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1px 60px;
+    grid-gap: 1px 40px;
+    justify-content: center;
+    align-content: center;
+    background-color: #25283d;
+  }
+}
+
+@media all and (min-width: 900px) {
+  .movies-container {
+    padding: 20px 70px 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1px 40px;
     justify-content: center;
     align-content: center;
     background-color: #25283d;
@@ -50,7 +62,7 @@
   .movies-container {
     padding: 20px 80px 60px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 1px 60px;
     justify-content: center;
     align-content: center;
