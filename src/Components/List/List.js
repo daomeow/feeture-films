@@ -28,8 +28,8 @@ export default class List extends Component {
       y: oY
     })
     const tooltip = document.getElementById(`cursor-${id}`)
-    tooltip.style.top = (this.state.y + 5) + "px";
-    tooltip.style.left = (this.state.x + 5) + "px";
+    tooltip.style.top = (this.state.y + 20) + "px";
+    tooltip.style.left = (this.state.x + 20) + "px";
   }
 
   handleLeave = () => {
