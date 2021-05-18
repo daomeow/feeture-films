@@ -4,16 +4,17 @@ Group Member Names:
 * Tyson McNutt
 
 Goals and Expectations for the Project (What does each group member hope to get out of this project? What do we want to achieve as a team? How will we know that we're successful?):
-* Solidify use of react and understanding of AJAX -- hitting iteration deliverables ahead of time
+* Solidify use of React and understanding of AJAX -- hitting iteration deliverables ahead of time
+* Get a better handle on use of Cypress and React Router
 
 Team strengths & collaboration styles (consider discussing your Pairin qualities here):
 * Diligent project board management from start to finish.
 
 How we can use our strengths to overcome obstacles:
 * Overcommunicate through blockers
+* Continue working through new material together
 
 Schedule Expectations (When are we available to work together and individually? What constraints do we have? Make sure to discuss the remote questions above in regards to this section):
-* Morning coding session before class.
 * Utilize all project time.
 * Grap solid dinner pom in evening (6pm)
 * Wrap up by 9pm. 
@@ -37,7 +38,7 @@ Expectations for giving and receiving feedback:
 Be open-minded and flexible and willing to examine each others point of view.
 
 Project management tools we will use (GitHub projects or Trello are popular tools):
-GitHub Projects and Issues. Teletype through pair sessions.
+GitHub Projects and Issues. Teletype through pair sessions if needed. Continue driver/navigator on new concepts
 
 Day 1 Agenda:
 Create a group Slack DM with both project partners and both instructors.
