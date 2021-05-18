@@ -20,7 +20,6 @@ export default class List extends Component {
   }
 
   handleMove = (e, id) => {
-    console.log(e);
     const oX = (e.nativeEvent.offsetX)
     const oY = (e.nativeEvent.offsetY)
     this.setState({ 
