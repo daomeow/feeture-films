@@ -1,7 +1,7 @@
 describe('Movie details', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', 
-    {
+    cy.visit("/")
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
         id: 694919,
         title: "Money Plane",
         poster_path: "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
@@ -16,11 +16,16 @@ describe('Movie details', () => {
         runtime: 82,
         tagline: "",
         average_rating: 6.142857142857143
-    }
-    )
+    })
+    // cy.get('.card>img[id=694919]').click()
+    cy.get('.movies-container').get('#694919').click()
   })
+
   it('should render the clicked movie\'s information', () => {
     // poster path, title, average rating, release date, backdrop path, overview, budget, revenue, genres, tagline, runtime 
-    cy.contains('h3')
+
+    // go to URL >> click movie
+
+    // Start from list's html and move into specific movie? 
   })
 })
