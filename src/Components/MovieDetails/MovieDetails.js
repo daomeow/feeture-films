@@ -14,9 +14,9 @@ const MovieDetails =({ movieInfo }) => {
       <div className='left-container'>
         <i className="fas fa-home"></i>
         <div className='top-details'>
-          <img src={poster_path} alt='Movie poster' className='details-poster'/>
+          <img src={poster_path} alt='Movie poster' className='movie-poster'/>
           <div className='general-info'>
-            <h3 className='details-title'>{title}</h3>
+            <h3 className='movie-title'>{title}</h3>
             <p className='tagline'>{tagline}</p>
             <p className='movie-rating'><i className="fas fa-star"></i>{roundedRating}/10</p>
             <div className='details-data'>

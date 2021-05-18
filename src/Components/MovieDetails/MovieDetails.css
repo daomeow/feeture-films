@@ -31,13 +31,13 @@
     padding: 0 6px;
   }
 
-  .details-poster { 
+  .movie-poster { 
     width: 150px;
     height: 200px;
     margin-top: 25px;
   } 
 
-  .details-title {
+  .movie-title {
     font-size: 25px;
     margin: 25px 0 0 0;
   }
@@ -88,12 +88,12 @@
     margin-left: 25px;
   } 
 
-  .details-poster {
+  .movie-poster {
     width: 12em;
     height: 18em;
   }
 
-  .details-title {
+  .movie-title {
     font-size: 3em;
     margin: 45px 0 0 45px;
   }
@@ -124,12 +124,12 @@
 
 @media screen and (min-width: 769px) {
   /* TO DO: update with Sass, same size as mobile view */
-  .details-poster {
+  .movie-poster {
     width: 150px;
     height: 200px;
   }
   
-  .details-title {
+  .movie-title {
     font-size: 25px;
     margin: 25px 0 0 0;
   }
