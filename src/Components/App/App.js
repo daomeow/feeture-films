@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import List from '../List/List';
 import './App.css';
-import movieData from '../../sample-data';
+// import movieData from '../../sample-data';
 import MovieDetails from '../MovieDetails/MovieDetails';
-import { json } from 'body-parser';
+// import { json } from 'body-parser';
 import { getAllMovies, findMovie } from '../../apiCalls';
 
 export default class App extends Component {
