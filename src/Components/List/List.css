@@ -16,9 +16,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1px 20px;
-    justify-content: center;
-    align-content: center;
-    background-color: #25283d;
   }
 }
 
@@ -28,9 +25,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1px 20px;
-    justify-content: center;
-    align-content: center;
-    background-color: #25283d;
   }
 }
 
@@ -40,9 +34,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1px 40px;
-    justify-content: center;
-    align-content: center;
-    background-color: #25283d;
   }
 }
 
@@ -52,9 +43,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1px 20px;
-    justify-content: center;
-    align-content: center;
-    background-color: #25283d;
   }
 }
 
@@ -64,9 +52,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1px 40px;
-    justify-content: center;
-    align-content: center;
-    background-color: #25283d;
   }
 }
 
@@ -76,9 +61,6 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1px 60px;
-    justify-content: center;
-    align-content: center;
-    background-color: #25283d;
   }
 }
 
