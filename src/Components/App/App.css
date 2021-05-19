@@ -4,7 +4,8 @@
   align-content: center;
 }
 
-  .fa-home{
+@media screen and (min-device-width: 320px) {
+  .fa-home {
     font-size: 20px;
     color: #CEA2AC;
     margin: 1em 15em 0 0;
@@ -16,3 +17,31 @@
     margin-top: 10px;
     margin-bottom: 0;
   }
+}
+
+@media screen and (min-width: 550px) {
+  .fa-home {
+    font-size: 30px;
+    margin: 20px 20em 0 0;
+  }
+  h1 {
+    font-size: 4em;
+  }
+}
+
+
+@media screen and (min-width: 750px) {
+  .fa-home {
+    font-size: 30px;
+    margin: 20px 23em 0 0;
+  }
+  h1 {
+    font-size: 4em;
+  }
+}
+
+@media screen and (min-width: 900px) {}
+
+@media screen and (min-width: 1200px) {}
+
+@media screen and (min-width: 1600px) {}
