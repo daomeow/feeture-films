@@ -36,7 +36,7 @@ export default class App extends Component {
     return (
       <main className='App'>
         <header>
-          <i className="fas fa-home"></i>
+          <i className="fas fa-home "></i>
           <h1>Rancid Tomatillos</h1>
         </header>
 
