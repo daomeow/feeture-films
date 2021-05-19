@@ -5,7 +5,7 @@ import './App.css';
 import MovieDetails from '../MovieDetails/MovieDetails';
 // import { json } from 'body-parser';
 import { getAllMovies, findMovie } from '../../apiCalls';
-import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 export default class App extends Component {
   constructor() {
@@ -45,31 +45,29 @@ export default class App extends Component {
           <Route exact path="/"
             render={() => (
               !this.state.movies.length && !this.state.error ?
-                <h2>Loading Movies...</h2>
-
+              <h2>Loading Movies...</h2>
+              
               : this.state.error && !this.state.movies.length ?
               <h2>{this.state.error}</h2>
-
+              
               : <List 
               movies={this.state.movies} 
               onClick={this.handleClick}  
               />
-            )}
+              )}
           />
           
           <Route path="/:id"
             render={() => {
-              console.log('here')
-              
               return (
-              this.state.clickedMovie && !this.state.error &&
-              <MovieDetails
+                this.state.clickedMovie && !this.state.error &&
+                <MovieDetails
                 movieInfo={this.state.clickedMovie}
-              />
-          
-            )}}
+                />
+                )
+              }}
           />
-          
+          {/* <Redirect to="/" /> */}
         </Switch>
       </main>
     )
