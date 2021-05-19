@@ -35,7 +35,11 @@ export default class App extends Component {
   render() {
     return (
       <main className='App'>
-        <h1>Rancid Tomatillos</h1>
+        <header>
+          <i className="fas fa-home "></i>
+          <h1>Rancid Tomatillos</h1>
+        </header>
+
         {this.state.error && !this.state.movies.length &&
           <h2>{this.state.error}</h2>
         }
