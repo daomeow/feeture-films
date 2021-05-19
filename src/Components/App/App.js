@@ -59,13 +59,15 @@ export default class App extends Component {
           
           <Route path="/:id"
             render={() => {
-
-            {this.state.clickedMovie && !this.state.error &&
+              console.log('here')
+              
+              return (
+              this.state.clickedMovie && !this.state.error &&
               <MovieDetails
                 movieInfo={this.state.clickedMovie}
               />
-            }
-              }}
+          
+            )}}
           />
           
         </Switch>
