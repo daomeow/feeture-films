@@ -12,7 +12,7 @@ const MovieDetails =({ movieInfo }) => {
   return (
     <div className='movie-details'>
       <div className='left-container'>
-        <i className="fas fa-home"></i>
+        {/* <i className="fas fa-home"></i> */}
         <div className='top-details'>
           <img src={poster_path} alt='Movie poster' className='movie-poster'/>
           <div className='general-info'>

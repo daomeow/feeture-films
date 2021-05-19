@@ -33,4 +33,8 @@ describe('Movie details', () => {
       .get('.revenue').should('contain', 'unknown')
       .get('.genres').should('contain', 'Action')
   })
+
+  it('should display an error message if the network is down', () => {
+    
+  })
 })
