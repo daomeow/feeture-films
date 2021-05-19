@@ -42,36 +42,44 @@ export default class App extends Component {
         </header>
 
         <Switch>
-          <Route exact path="/">
-            <List 
-            movies={this.state.movies} 
-            onClick={this.handleClick}  
-            />
-          </Route>
+          <Route exact path="/"
+            render={() => (
+              !this.state.movies.length && !this.state.error ?
+                <h2>Loading Movies...</h2>
 
- 
-          {this.state.error && !this.state.movies.length &&
-            <h2>{this.state.error}</h2>
-          }
-          {this.state.clickedMovie &&
-            <MovieDetails
-              movieInfo={this.state.clickedMovie}
-            />
-          }
-          {!this.state.movies.length && !this.state.error &&
-            <h2>Loading Movies...</h2>
-          }
+              : this.state.error && !this.state.movies.length ?
+              <h2>{this.state.error}</h2>
+
+              : <List 
+              movies={this.state.movies} 
+              onClick={this.handleClick}  
+              />
+            )}
+          />
+          
+          <Route path="/:id"
+            render={() => {
+
+            {this.state.clickedMovie && !this.state.error &&
+              <MovieDetails
+                movieInfo={this.state.clickedMovie}
+              />
+            }
+              }}
+          />
           
         </Switch>
-
-
-
       </main>
     )
   }
 }
 
 
+// {this.state.clickedMovie &&
+//   <MovieDetails
+//     movieInfo={this.state.clickedMovie}
+//   />
+// }
 // {!this.state.error && !this.state.clickedMovie &&
 //   <List 
 //     movies={this.state.movies} 
