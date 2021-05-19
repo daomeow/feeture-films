@@ -22,20 +22,15 @@ describe('Movie details', () => {
   })
 
   it('should render the clicked movie\'s information', () => {
-    // poster path, title, average rating, release date, backdrop path, overview, budget, revenue, genres, tagline, runtime 
-
     cy.contains('h3', 'Money Plane')
-      .get('img')
+      .get('.movie-poster').should('be.visible')
         // .should('have.class','https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg')
         // .should('have.class','.movie-poster')
-        .get('.tagline').should('contain', '')
-        .get('.movie-rating').should('contain', 6)
-        .get('.year-details').should('contain', 2020)
-        .get('.budget').should('contain', 'unknown')
-        .get('.revenue').should('contain', 'unknown')
-        .get('.genres').should('contain', 'Action')
-
-
-    // Start from list's html and move into specific movie? 
+      .get('.tagline').should('contain', '')
+      .get('.movie-rating').should('contain', 6)
+      .get('.year-details').should('contain', 2020)
+      .get('.budget').should('contain', 'unknown')
+      .get('.revenue').should('contain', 'unknown')
+      .get('.genres').should('contain', 'Action')
   })
 })
