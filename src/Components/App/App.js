@@ -5,6 +5,7 @@ import './App.css';
 import MovieDetails from '../MovieDetails/MovieDetails';
 // import { json } from 'body-parser';
 import { getAllMovies, findMovie } from '../../apiCalls';
+import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
 
 export default class App extends Component {
   constructor() {
@@ -40,25 +41,40 @@ export default class App extends Component {
           <h1>Rancid Tomatillos</h1>
         </header>
 
-        {this.state.error && !this.state.movies.length &&
-          <h2>{this.state.error}</h2>
-        }
-        {this.state.clickedMovie &&
-          <MovieDetails
-            movieInfo={this.state.clickedMovie}
-          />
-        }
-        {!this.state.movies.length && !this.state.error &&
-          <h2>Loading Movies...</h2>
-        }
-        {!this.state.error && !this.state.clickedMovie &&
-          <List 
+        <Switch>
+          <Route exact path="/">
+            <List 
             movies={this.state.movies} 
             onClick={this.handleClick}  
-          />
-        } 
+            />
+          </Route>
+
+ 
+          {this.state.error && !this.state.movies.length &&
+            <h2>{this.state.error}</h2>
+          }
+          {this.state.clickedMovie &&
+            <MovieDetails
+              movieInfo={this.state.clickedMovie}
+            />
+          }
+          {!this.state.movies.length && !this.state.error &&
+            <h2>Loading Movies...</h2>
+          }
+          
+        </Switch>
+
+
+
       </main>
     )
   }
 }
 
+
+// {!this.state.error && !this.state.clickedMovie &&
+//   <List 
+//     movies={this.state.movies} 
+//     onClick={this.handleClick}  
+//   />
+// } 
