@@ -2,9 +2,9 @@
 // import { render } from "ejs";
 import React, { Component } from "react";
 import Movie from "../Movie/Movie";
-import "./List.css";
+import "./View.css";
 
-export default class List extends Component {
+export default class View extends Component {
   constructor(props) {
     super(props);
     this.state = {

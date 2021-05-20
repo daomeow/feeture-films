@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import List from '../List/List';
+import View from '../View/View';
 import './App.css';
 // import movieData from '../../sample-data';
 import MovieDetails from '../MovieDetails/MovieDetails';
@@ -50,7 +50,7 @@ export default class App extends Component {
               : this.state.error && !this.state.movies.length ?
               <h2>{this.state.error}</h2>
               
-              : <List 
+              : <View 
               movies={this.state.movies} 
               onClick={this.handleClick}  
               />
@@ -67,7 +67,7 @@ export default class App extends Component {
                 )
               }}
           />
-          {/* <Redirect to="/" /> */}
+          {/* <Redirect to={{pathname:"/"}} /> */}
         </Switch>
       </main>
     )
@@ -81,7 +81,7 @@ export default class App extends Component {
 //   />
 // }
 // {!this.state.error && !this.state.clickedMovie &&
-//   <List 
+//   <View 
 //     movies={this.state.movies} 
 //     onClick={this.handleClick}  
 //   />
