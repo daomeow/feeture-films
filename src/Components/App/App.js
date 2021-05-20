@@ -3,6 +3,7 @@ import List from '../List/List';
 import './App.css';
 // import movieData from '../../sample-data';
 import MovieDetails from '../MovieDetails/MovieDetails';
+import Header from '../Header/Header';
 // import { json } from 'body-parser';
 import { getAllMovies, findMovie } from '../../apiCalls';
 import { Route, Switch, Redirect } from 'react-router-dom';
@@ -31,15 +32,19 @@ export default class App extends Component {
         this.setState({ movies: data.movies })
       })
       .catch(error => this.setState({ error: "Something went wrong" }))
-  }
+  }               
 
   render() {
     return (
       <main className='App'>
-        <header>
-          <i className="fas fa-home "></i>
+        <Header>
+          
+        </Header>
+
+        {/* <header>
+          <i className="fas fa-home visibility"></i>
           <h1>Rancid Tomatillos</h1>
-        </header>
+        </header> */}
 
         <Switch>
           <Route exact path="/"
