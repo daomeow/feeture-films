@@ -1,5 +1,3 @@
-// import { react } from "@babel/types";
-// import { render } from "ejs";
 import React, { Component } from "react";
 import Movie from "../Movie/Movie";
 import "./List.css";
@@ -12,7 +10,6 @@ export default class List extends Component {
       x: 0,
       y: 0
     };
-
   }
 
   handleEnter = (id) => {

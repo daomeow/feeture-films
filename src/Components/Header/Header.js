@@ -1,11 +1,14 @@
 import React from 'react';
-import { getAllMovies } from '../../apiCalls';
 import './Header.css';
+import { NavLink } from 'react-router-dom';
+
 
 const Header = ({ getMovies }) => {
   return (
     <header>
-      <i className="fas fa-home visibility"></i>
+      <NavLink exact to="/" onClick={getMovies} activeStyle={{ visibility: 'hidden' }}>
+        <i className="fas fa-home"></i>
+      </NavLink>
       <h1>Rancid Tomatillos</h1>
     </header>
   )
