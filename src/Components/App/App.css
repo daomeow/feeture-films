@@ -4,7 +4,7 @@
   align-content: center;
 }
 
-@media screen and (min-device-width: 320px) {
+/* @media screen and (min-device-width: 320px) {
   header {
     display: flex;
     justify-content: space-around;
@@ -70,4 +70,4 @@
   h1 {
     margin-right: 15em;
   }
-}
+} */

@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
-import List from '../List/List';
 import './App.css';
-// import movieData from '../../sample-data';
-import MovieDetails from '../MovieDetails/MovieDetails';
 import Header from '../Header/Header';
-// import { json } from 'body-parser';
+import List from '../List/List';
+import MovieDetails from '../MovieDetails/MovieDetails';
+import React, { Component } from 'react';
 import { getAllMovies, findMovie } from '../../apiCalls';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
@@ -38,13 +36,8 @@ export default class App extends Component {
     return (
       <main className='App'>
         <Header>
-          
+          getMovies={this.componentDidMount}
         </Header>
-
-        {/* <header>
-          <i className="fas fa-home visibility"></i>
-          <h1>Rancid Tomatillos</h1>
-        </header> */}
 
         <Switch>
           <Route exact path="/"
@@ -80,14 +73,3 @@ export default class App extends Component {
 }
 
 
-// {this.state.clickedMovie &&
-//   <MovieDetails
-//     movieInfo={this.state.clickedMovie}
-//   />
-// }
-// {!this.state.error && !this.state.clickedMovie &&
-//   <List 
-//     movies={this.state.movies} 
-//     onClick={this.handleClick}  
-//   />
-// } 

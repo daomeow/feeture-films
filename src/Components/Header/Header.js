@@ -1,7 +1,8 @@
 import React from 'react';
+import { getAllMovies } from '../../apiCalls';
 import './Header.css';
 
-const Header = ({  }) => {
+const Header = ({ getMovies }) => {
   return (
     <header>
       <i className="fas fa-home visibility"></i>
