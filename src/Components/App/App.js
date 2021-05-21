@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import View from '../View/View';
 import './App.css';
-// import movieData from '../../sample-data';
+import Header from '../Header/Header';
+import List from '../List/List';
+import Movie from '../Movie/Movie';
 import MovieDetails from '../MovieDetails/MovieDetails';
-// import { json } from 'body-parser';
+import React, { Component } from 'react';
 import { getAllMovies, findMovie } from '../../apiCalls';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
@@ -31,15 +31,14 @@ export default class App extends Component {
         this.setState({ movies: data.movies })
       })
       .catch(error => this.setState({ error: "Something went wrong" }))
-  }
+  }               
 
   render() {
     return (
       <main className='App'>
-        <header>
-          <i className="fas fa-home "></i>
-          <h1>Rancid Tomatillos</h1>
-        </header>
+        <Header>
+          getMovies={this.componentDidMount}
+        </Header>
 
         <Switch>
           <Route exact path="/"
@@ -50,10 +49,22 @@ export default class App extends Component {
               : this.state.error && !this.state.movies.length ?
               <h2>{this.state.error}</h2>
               
-              : <View 
-              movies={this.state.movies} 
-              onClick={this.handleClick}  
-              />
+              : <List>
+                movies={this.state.movies} 
+              
+                const movieCards = this.props.movies.map((movie) => (
+                  <Movie
+                    posterPath={movie.poster_path}
+                    title={movie.title}
+                    onClick={this.handleClick}
+                    id={movie.id}
+                    key={movie.id}
+                    onMouseEnter={this.handleEnter}
+                    onMouseMove={this.handleMove}
+                    onMouseLeave={this.handleLeave}
+                  />
+
+              </List>
               )}
           />
           
@@ -73,16 +84,3 @@ export default class App extends Component {
     )
   }
 }
-
-
-// {this.state.clickedMovie &&
-//   <MovieDetails
-//     movieInfo={this.state.clickedMovie}
-//   />
-// }
-// {!this.state.error && !this.state.clickedMovie &&
-//   <View 
-//     movies={this.state.movies} 
-//     onClick={this.handleClick}  
-//   />
-// } 

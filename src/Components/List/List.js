@@ -1,10 +1,8 @@
-// import { react } from "@babel/types";
-// import { render } from "ejs";
 import React, { Component } from "react";
 import Movie from "../Movie/Movie";
-import "./View.css";
+import "./List.css";
 
-export default class View extends Component {
+export default class List extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +10,6 @@ export default class View extends Component {
       x: 0,
       y: 0
     };
-
   }
 
   handleEnter = (id) => {
@@ -40,6 +37,8 @@ export default class View extends Component {
   }
 
   render() {
+    console.log(this.props.children);
+    
     const movieCards = this.props.movies.map((movie) => (
       <Movie
         posterPath={movie.poster_path}
