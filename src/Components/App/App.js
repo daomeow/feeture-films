@@ -14,7 +14,6 @@ import {
   formatList 
 } from '../../utilities';
 
-
 export default class App extends Component {
   constructor() {
     super()
@@ -51,7 +50,6 @@ export default class App extends Component {
   componentDidMount() {
     getAllMovies()
       .then(data => {
-        console.log(data.movies)
         this.setState({ movies: formatOrder(data.movies) })
       })
       .catch(error => this.setState({ error: "Something went wrong" }))
@@ -68,10 +66,10 @@ export default class App extends Component {
           <Route exact path="/"
             render={() => (
               !this.state.movies.length && !this.state.error ?
-              <h2>Loading Movies...</h2>
+                <h2>Loading Movies...</h2>
               
               : this.state.error && !this.state.movies.length ?
-              <h2>{this.state.error}</h2>
+                <h2>{this.state.error}</h2>
               
               : <List 
               movies={this.state.movies} 
@@ -85,10 +83,12 @@ export default class App extends Component {
               const id = match.params.id
               this.handleClick(id)
               return (
-                this.state.clickedMovie && !this.state.error &&
+                !this.state.clickedMovie && !this.state.error ?
+                  <h2>Loading Movie's Details...</h2>
+                  
+                : this.state.clickedMovie && !this.state.error &&
                 <MovieDetails
                   movieInfo={this.state.clickedMovie}
-                  id={id}
                 />
                 )
               }}

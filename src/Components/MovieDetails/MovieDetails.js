@@ -1,9 +1,7 @@
 import React from 'react';
 import './MovieDetails.css';
-import { Link } from "react-router-dom";
 
-
-const MovieDetails =({ movieInfo, id }) => {
+const MovieDetails =({ movieInfo }) => {
   const { poster_path, title, average_rating, release_date, backdrop_path, overview, budget, revenue, genres, tagline, runtime } = movieInfo; 
 
   return (
