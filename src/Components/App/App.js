@@ -3,7 +3,7 @@ import Header from '../Header/Header';
 import List from '../List/List';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import React, { Component } from 'react';
-import { getAllMovies, findMovie } from '../../apiCalls';
+import { getAllMovies, findMovie } from '../../utilities';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 export default class App extends Component {
