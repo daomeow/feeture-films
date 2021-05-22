@@ -8,3 +8,10 @@ export const findMovie = (id) => {
     .then(response => response.json())
 }
 
+export const formatRating = (rate) => Math.round(rate);
+
+export const yearOnly = (date) => date.split('-').shift();
+
+export const formatList = (list) => list.join(', ');
+
+export const formatAmount = (item) => item.toLocaleString();
