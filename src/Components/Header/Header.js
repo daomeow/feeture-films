@@ -6,10 +6,10 @@ import { NavLink } from 'react-router-dom';
 const Header = ({ getMovies }) => {
   return (
     <header>
-      <NavLink exact to="/" onClick={getMovies} activeStyle={{ visibility: 'hidden' }}>
+      <NavLink exact to="/" onClick={getMovies} >
         <i className="fas fa-home"></i>
       </NavLink>
-      <h1>Rancid Tomatillos</h1>
+      <h1>F🦶🏼🦶🏼ture Films</h1>
     </header>
   )
 }
@@ -17,3 +17,10 @@ const Header = ({ getMovies }) => {
 
 
 export default Header; 
+
+
+// activeStyle={{ visibility: 'hidden' }}
+
+{/* <NavLink exact to="/" onClick={getMovies} activeStyle={{ visibility: 'hidden' }}>
+<i className="fas fa-home"></i>
+</NavLink> */}
