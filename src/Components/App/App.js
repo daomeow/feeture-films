@@ -6,7 +6,8 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { 
   getAllMovies, 
-  findMovie, 
+  findMovie,
+  formatOrder, 
   formatRating, 
   yearOnly, 
   formatAmount, 
@@ -27,8 +28,6 @@ export default class App extends Component {
   handleClick = (id) => {
     findMovie(id)
       .then(movie => {
-        // const { movie } = movieData
-        console.log(movie.movie.id)
         this.setState({
           clickedMovie: {
           id: movie.movie.id,
@@ -43,7 +42,7 @@ export default class App extends Component {
           runtime: movie.movie.runtime,
           tagline: movie.movie.tagline, 
           average_rating: formatRating(movie.movie.average_rating)
-         }
+          }
         })
       })
       .catch(error => this.setState({ error }))
@@ -52,7 +51,8 @@ export default class App extends Component {
   componentDidMount() {
     getAllMovies()
       .then(data => {
-        this.setState({ movies: data.movies })
+        console.log(data.movies)
+        this.setState({ movies: formatOrder(data.movies) })
       })
       .catch(error => this.setState({ error: "Something went wrong" }))
   }               

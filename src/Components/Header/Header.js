@@ -9,7 +9,7 @@ const Header = ({ getMovies }) => {
       <NavLink exact to="/" onClick={getMovies} activeStyle={{ visibility: 'hidden' }}>
         <i className="fas fa-home"></i>
       </NavLink>
-      <h1>🦶🏼Feeture Films</h1>
+      <h1>Feeture🦶🏼Films</h1>
     </header>
   )
 }

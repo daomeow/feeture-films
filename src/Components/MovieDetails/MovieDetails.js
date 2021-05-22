@@ -3,11 +3,6 @@ import './MovieDetails.css';
 
 const MovieDetails =({ movieInfo }) => {
   const { poster_path, title, average_rating, release_date, backdrop_path, overview, budget, revenue, genres, tagline, runtime } = movieInfo; 
-  // const roundedRating = Math.round(average_rating); 
-  // const yearOnly = release_date.split('-').shift();
-  // const newBudget = budget.toLocaleString();
-  // const newRevenue = revenue.toLocaleString();
-  // const newGenres = genres.join(', ');
 
   return (
     <div className='movie-details'>
