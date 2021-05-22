@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 const Header = ({ getMovies }) => {
   return (
     <header>
-      <NavLink exact to="/" onClick={getMovies} activeStyle={{ visibility: 'hidden' }}>
+      <NavLink exact to="/" onClick={getMovies} >
         <i className="fas fa-home"></i>
       </NavLink>
       <h1>Feeture🦶🏼Films</h1>

@@ -10,7 +10,6 @@ export const findMovie = (id) => {
 
 export const formatOrder = (list) => list.sort((a, b) => (a.title > b.title) ? 1 : -1);
 
-
 export const formatRating = (rate) => Math.round(rate);
 
 export const yearOnly = (date) => date.split('-').shift();
