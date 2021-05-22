@@ -55,12 +55,15 @@ export default class App extends Component {
               )}
           />
           
-          <Route path="/:id"
-            render={() => {
+          <Route exact path="/:id"
+            render={({ match }) => {
+              const id = match.params.id
+              this.handleClick(id)
               return (
                 this.state.clickedMovie && !this.state.error &&
                 <MovieDetails
-                movieInfo={this.state.clickedMovie}
+                  movieInfo={this.state.clickedMovie}
+                  id={id}
                 />
                 )
               }}
