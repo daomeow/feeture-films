@@ -13,10 +13,37 @@ export default class App extends Component {
     this.state = {
       movies: [],
       clickedMovie: null,
-      error: ''
+      error: '',
+      focusCard: null,
+      x: 0,
+      y: 0
     }
   }
-  
+
+  handleEnter = (id) => {
+    this.setState({ focusCard: id })
+  }
+
+  handleMove = (e, id) => {
+    const oX = (e.nativeEvent.offsetX)
+    const oY = (e.nativeEvent.offsetY)
+    this.setState({ 
+      x: oX,
+      y: oY
+    })
+    const tooltip = document.getElementById(`cursor-${id}`)
+    tooltip.style.top = (this.state.y + 20) + "px";
+    tooltip.style.left = (this.state.x + 20) + "px";
+  }
+
+  handleLeave = () => {
+    this.setState({ 
+      focusCard: null,
+      x: 0,
+      y: 0
+    })
+  }
+
   handleClick = (id) => {
     findMovie(id)
       .then(movie => {
@@ -49,22 +76,17 @@ export default class App extends Component {
               : this.state.error && !this.state.movies.length ?
               <h2>{this.state.error}</h2>
               
-              : <List>
-                movies={this.state.movies} 
+              : <List   movies={this.state.movies}       
+                  onClick={this.handleClick}
+                  onMouseEnter={this.handleEnter}
+                  onMouseMove={this.handleMove}
+                  onMouseLeave={this.handleLeave}
+              />
               
-                const movieCards = this.props.movies.map((movie) => (
-                  <Movie
-                    posterPath={movie.poster_path}
-                    title={movie.title}
-                    onClick={this.handleClick}
-                    id={movie.id}
-                    key={movie.id}
-                    onMouseEnter={this.handleEnter}
-                    onMouseMove={this.handleMove}
-                    onMouseLeave={this.handleLeave}
-                  />
+              
 
-              </List>
+
+              // </List
               )}
           />
           

@@ -1,60 +1,37 @@
-import React, { Component } from "react";
+import React from "react";
 import Movie from "../Movie/Movie";
 import "./List.css";
+import '../Movie/Movie.css';
+import { Link } from "react-router-dom";
 
-export default class List extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      focusCard: null,
-      x: 0,
-      y: 0
-    };
-  }
+const  List = ({ movies, onClick, onMouseEnter, onMouseMove, onMouseLeave}) => {
+    if (movies) {
+      const movieCards = movies.map((movie) => {
+        const {posterPath, title, id} = movie;
+        const tip = `cursor-${id}`
 
-  handleEnter = (id) => {
-    this.setState({ focusCard: id })
-  }
-
-  handleMove = (e, id) => {
-    const oX = (e.nativeEvent.offsetX)
-    const oY = (e.nativeEvent.offsetY)
-    this.setState({ 
-      x: oX,
-      y: oY
+        return  (
+          <Link to={`/${id}`}>
+            <img
+              className='poster'
+              src={posterPath}
+              alt={title}
+              title={title}
+             onClick={onClick}
+             id={id}
+              key={id}
+              onMouseEnter={onMouseEnter}
+              onMouseMove={onMouseMove}
+              onMouseLeave={onMouseLeave}
+          />
+          <span className="cursor" id={tip} >{title}
+          </span>
+        </Link>
+        )
     })
-    const tooltip = document.getElementById(`cursor-${id}`)
-    tooltip.style.top = (this.state.y + 20) + "px";
-    tooltip.style.left = (this.state.x + 20) + "px";
-  }
-
-  handleLeave = () => {
-    this.setState({ 
-      focusCard: null,
-      x: 0,
-      y: 0
-    })
-  }
-
-  render() {
-    console.log(this.props.children);
-    
-    const movieCards = this.props.movies.map((movie) => (
-      <Movie
-        posterPath={movie.poster_path}
-        title={movie.title}
-        onClick={this.props.onClick}
-        id={movie.id}
-        key={movie.id}
-        onMouseEnter={this.handleEnter}
-        onMouseMove={this.handleMove}
-        onMouseLeave={this.handleLeave}
-      />
-    ));
-    return (
-        <div className="movies-container">{movieCards}</div>
-    );
   }
 }
+
+  export default List;
 
 
