@@ -44,7 +44,7 @@ export default class App extends Component {
           }
         })
       })
-      .catch(error => this.setState({ error }))
+      .catch(error => this.setState({ error: "Not a valid path - redirecting to home" }))
   }
 
   componentDidMount() {
@@ -85,7 +85,7 @@ export default class App extends Component {
               return (
                 !this.state.clickedMovie && !this.state.error ?
                   <h2>Loading Movie's Details...</h2>
-                  
+
                 : this.state.clickedMovie && !this.state.error &&
                 <MovieDetails
                   movieInfo={this.state.clickedMovie}
@@ -93,8 +93,8 @@ export default class App extends Component {
                 )
               }}
           />
-          {/* <Redirect to="/" /> */}
         </Switch>
+        <Redirect to="/" />
       </main>
     )
   }
