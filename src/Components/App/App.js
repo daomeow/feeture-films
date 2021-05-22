@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import List from '../List/List';
 import './App.css';
-// import movieData from '../../sample-data';
+import Header from '../Header/Header';
+import List from '../List/List';
 import MovieDetails from '../MovieDetails/MovieDetails';
-// import { json } from 'body-parser';
+import React, { Component } from 'react';
 import { getAllMovies, findMovie } from '../../apiCalls';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
@@ -31,15 +30,14 @@ export default class App extends Component {
         this.setState({ movies: data.movies })
       })
       .catch(error => this.setState({ error: "Something went wrong" }))
-  }
+  }               
 
   render() {
     return (
       <main className='App'>
-        <header>
-          <i className="fas fa-home "></i>
-          <h1>Rancid Tomatillos</h1>
-        </header>
+        <Header>
+          getMovies={this.componentDidMount}
+        </Header>
 
         <Switch>
           <Route exact path="/"
@@ -75,14 +73,3 @@ export default class App extends Component {
 }
 
 
-// {this.state.clickedMovie &&
-//   <MovieDetails
-//     movieInfo={this.state.clickedMovie}
-//   />
-// }
-// {!this.state.error && !this.state.clickedMovie &&
-//   <List 
-//     movies={this.state.movies} 
-//     onClick={this.handleClick}  
-//   />
-// } 
