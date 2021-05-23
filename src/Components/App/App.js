@@ -3,8 +3,16 @@ import Header from '../Header/Header';
 import List from '../List/List';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import React, { Component } from 'react';
-import { getAllMovies, findMovie } from '../../apiCalls';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { 
+  getAllMovies, 
+  findMovie,
+  formatOrder, 
+  formatRating, 
+  yearOnly, 
+  formatAmount, 
+  formatList 
+} from '../../utilities';
 
 export default class App extends Component {
   constructor() {
@@ -19,15 +27,30 @@ export default class App extends Component {
   handleClick = (id) => {
     findMovie(id)
       .then(movie => {
-        this.setState({ clickedMovie: movie.movie })
+        this.setState({
+          clickedMovie: {
+          id: movie.movie.id,
+          title: movie.movie.title,
+          poster_path: movie.movie.poster_path,
+          backdrop_path: movie.movie.backdrop_path,
+          release_date: yearOnly(movie.movie.release_date), 
+          overview: movie.movie.overview, 
+          genres: formatList(movie.movie.genres),
+          budget: formatAmount(movie.movie.budget), 
+          revenue: formatAmount(movie.movie.revenue), 
+          runtime: movie.movie.runtime,
+          tagline: movie.movie.tagline, 
+          average_rating: formatRating(movie.movie.average_rating)
+          }
+        })
       })
-      .catch(error => this.setState({ error }))
+      .catch(error => this.setState({ error: "Not a valid path - redirecting to home" }))
   }
 
   componentDidMount() {
     getAllMovies()
       .then(data => {
-        this.setState({ movies: data.movies })
+        this.setState({ movies: formatOrder(data.movies) })
       })
       .catch(error => this.setState({ error: "Something went wrong" }))
   }               
@@ -43,10 +66,10 @@ export default class App extends Component {
           <Route exact path="/"
             render={() => (
               !this.state.movies.length && !this.state.error ?
-              <h2>Loading Movies...</h2>
+                <h2>Loading Movies...</h2>
               
               : this.state.error && !this.state.movies.length ?
-              <h2>{this.state.error}</h2>
+                <h2>{this.state.error}</h2>
               
               : <List 
               movies={this.state.movies} 
@@ -54,22 +77,23 @@ export default class App extends Component {
               />
               )}
           />
-          
           <Route exact path="/:id"
             render={({ match }) => {
               const id = match.params.id
               this.handleClick(id)
               return (
-                this.state.clickedMovie && !this.state.error &&
+                !this.state.clickedMovie && !this.state.error ?
+                  <h2>Loading Movie's Details...</h2>
+
+                : this.state.clickedMovie && !this.state.error &&
                 <MovieDetails
                   movieInfo={this.state.clickedMovie}
-                  id={id}
                 />
                 )
               }}
           />
-          {/* <Redirect to="/" /> */}
         </Switch>
+        <Redirect to="/" />
       </main>
     )
   }
