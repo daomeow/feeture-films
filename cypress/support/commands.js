@@ -1,5 +1,6 @@
 import movies from "../fixtures/movies"
 import singleMovie from "../fixtures/single-movie"
+
 const baseURL = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies'
 Cypress.Commands.add('interceptMovies', () => {
   cy.intercept(baseURL, movies ).as('getStubbed')
@@ -7,6 +8,7 @@ Cypress.Commands.add('interceptMovies', () => {
 })
 
 Cypress.Commands.add('interceptSingleMovie', () => {
-  cy.intercept('GET', `${baseURL}/694919`, json).as('getSingleStub')
+  cy.intercept(`${baseURL}/694919`, singleMovie).as('getSingleStub')
     .visit('http://localhost:3000/')
+    cy.get('.movies-container').get('#694919').click()
 })

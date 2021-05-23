@@ -15,4 +15,4 @@ export default {
     "tagline": "",
     "average_rating": 6.142857142857143
   }
-  }
+}
