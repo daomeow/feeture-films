@@ -77,7 +77,6 @@ export default class App extends Component {
               />
               )}
           />
-          
           <Route exact path="/:id"
             render={({ match }) => {
               const id = match.params.id
