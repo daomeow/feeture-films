@@ -34,7 +34,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <main className='App'>
+      <main className='App' title="App">
         <Header>
           getMovies={this.componentDidMount}
         </Header>
@@ -68,8 +68,8 @@ export default class App extends Component {
                 )
               }}
           />
-          {/* <Redirect to="/" /> */}
         </Switch>
+        <Redirect to="/" />
       </main>
     )
   }
