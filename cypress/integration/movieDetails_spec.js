@@ -1,3 +1,22 @@
+describe('The Test', () => {
+  beforeEach(() => {
+    cy.interceptSingleMovie()
+  });
+
+  it('should intercept the network request', () => {
+    cy.wait('@getSingleStub')
+      .its('response.statusCode')
+      .should('eq', 200)
+    });
+
+   it('should provide stubbed data', () => {
+    cy.wait('@getSingleStub')
+    cy.get('.movies-details')
+    .get('.left-container')
+    .should('be.visible')
+    }); 
+  });
+
 describe('Movie details', () => {
   beforeEach(() => {
     cy.visit("/")
