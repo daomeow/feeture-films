@@ -1,3 +1,8 @@
+.movie-details {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (min-device-width: 320px) {
   body {
     background-color: #25283D;
