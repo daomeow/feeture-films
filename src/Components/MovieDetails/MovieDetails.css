@@ -17,7 +17,7 @@
     background-color: black;
     box-shadow:  5px 5px 10px #8F3985,
     -5px -5px 10px #A675A1;
-    margin-bottom: 2em;
+    margin: 0 10px 2em 10px
   } 
 
   .top-details {
@@ -27,8 +27,8 @@
   }
 
   .movie-poster { 
-    width: 150px;
-    height: 200px;
+    width: 7em;
+    height: 10em;
     margin-top: 25px;
   } 
 
@@ -49,12 +49,13 @@
 
   .over-view{
     padding: 0 10px;
-    margin-bottom: 10px;
+    margin: 10px 20px 10px 20px;
   }
 
   .bottom-container {
     display: flex;
     justify-content: space-around;
+    width: 100%;
   }
 
   .budget,
@@ -64,7 +65,7 @@
     width: 6em;
     font-size: 14px;
     padding: 20px 14px 15px 7px;
-    margin-top: 0;
+    margin: 0 5px 2em 5px;
   }
 
   .backdrop {
@@ -73,13 +74,14 @@
 }
 
 @media screen and (min-width: 550px) {
-  .left-container {
+  /* .left-container {
     height: 30em;
-  }
+  } */
 
   .movie-details {
     padding: 0 52px;
   }
+
 }
 
 @media screen and (min-width: 750px) {
@@ -123,7 +125,7 @@
   .left-container {
     width: 45em;
     height: 33.4em;
-    margin-left: 25px;
+    margin-right: 0;
   } 
   
   .movie-details {
@@ -172,7 +174,7 @@
     display: inline-block;
     box-shadow:  5px 5px 10px #8F3985,
     -5px -5px 10px #A675A1;
-    margin-right: 25px;
+    /* margin-right: 25px; */
   } 
 }
 
