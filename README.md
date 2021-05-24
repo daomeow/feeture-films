@@ -23,7 +23,6 @@ Visit the most trust recommendation resource for quality entertainment, Feeture 
 - Javascript
 - React Testing Library 
 - Cypress
-- Mocha & Chai 
 - Router
 - HTML
 - CSS
