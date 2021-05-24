@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-describe('List view', () => {
-  beforeEach(() => {
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', cy.fixture('movies.json')).as("getMovies")
-    cy.visit("/")
-    
-  })
-  
-  it('should render movies on the main page', () => {
-    // cy.wait("@getMovies")
-    cy.contains('h1', 'Rancid Tomatillos')
-    cy.get('.movies-container').should('be.visible')
-  })
-})
-=======
 describe('The Test', () => {
   beforeEach(() => {
     cy.interceptMovies()
@@ -97,4 +82,3 @@ describe('List View Not Loading', () => {
       cy.url().should('eq', 'http://localhost:3000/' )
   })
 });
->>>>>>> 8a40af19e3d97819eb6f4712b77a3d14c3ea0776
