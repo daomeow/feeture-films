@@ -12,8 +12,7 @@ import {
   formatRating, 
   yearOnly, 
   formatAmount, 
-  formatList,
-  test 
+  formatList
 } from '../../utilities';
 
 export default class App extends Component {
@@ -76,7 +75,7 @@ export default class App extends Component {
               
               : <List 
               movies={this.state.movies} 
-              onClick={this.handleClick}  
+              // onClick={this.handleClick}  
               />
               )}
           />

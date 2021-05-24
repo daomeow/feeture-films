@@ -14,10 +14,6 @@ const Header = ({ getMovies }) => {
   )
 }
 
-
-
 export default Header; 
 
-
-// activeStyle={{ visibility: 'hidden' }}
 
