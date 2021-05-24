@@ -1,6 +1,5 @@
 # Feeture Films
 Visit the most trusted recommendation resource for quality entertainment, Feeture Films!
-![Tooltip and responsive GIF](https://media.giphy.com/media/mX4cSRSf6xvBI4RA2g/giphy.gif)
 
 ## Description
 - Feeture Films provides a user friendly experience to research current and past films
@@ -9,7 +8,17 @@ Visit the most trusted recommendation resource for quality entertainment, Feetur
 
 ## Accessibility
 - The app's design is responsive with several breakpoints to accommodate various screen sizes.
+
+Main Page:
+
+ ![Tooltip and responsive GIF](https://media.giphy.com/media/mX4cSRSf6xvBI4RA2g/giphy.gif)
+
+Single Movie Details Page:
+
+ ![Movie details GIF](https://media.giphy.com/media/xlBuCbLQGG4wRbiMJE/giphy.gif)
+
 - Lighthouse audit upon release:
+
  ![Image revealing Lighthouse report](docs/lightHouse.png)
 
 ## Setup
@@ -27,8 +36,6 @@ Visit the most trusted recommendation resource for quality entertainment, Feetur
 - Router
 - HTML
 - CSS
-
-![Movie details GIF](https://media.giphy.com/media/xlBuCbLQGG4wRbiMJE/giphy.gif)
 
 ## Next Steps
 - Add a feature to favorite movies
