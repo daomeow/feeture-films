@@ -1,23 +1,28 @@
+* {
+  /* border: 1px solid red; */
+}
 @media screen and (min-device-width: 320px) {
   header {
     display: flex;
     justify-content: space-around;
+    align-items: center;
   }
 
   .fa-home {
     color: #CEA2AC;
-    padding-top: 20px;
-    font-size: 18px;
+    font-size: 15px;
   } 
 
   h1 {
     color: white;
     margin: 10px 20px 15px 0;
+    font-size: 28px;
+    font-family: 'Roboto Mono', monospace;
   }
 
-  /* .visibility {
-    display: none;
-  } */
+ .fa-shoe-prints {
+   font-size: 20px;
+ }
 }
 
 @media all and (min-width: 550px) {
@@ -36,9 +41,14 @@
     font-size: 30px;
     margin-top: 12px;
   }
+
   h1 {
     font-size: 4em;
     margin: 10px 85px 15px 0;
+  }
+
+  .fa-shoe-prints {
+    font-size: 35px;
   }
 }
 
