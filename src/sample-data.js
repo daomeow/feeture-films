@@ -323,4 +323,4 @@ const movieData = {
   ]
 };
 
-module.exports {movieData};
+export default movieData;
