@@ -14,7 +14,7 @@ export const filterMoviesData = (list) => {
     delete movie.release_date;
     delete movie.backdrop_path;
   })
-
+  
   return list.movies
 }
 
