@@ -4,28 +4,16 @@ import { createMemoryHistory } from 'history';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 
-import App from './App';
+import Header from './Header';
 
-describe('App Component', () => {
+describe('Header Component', () => {
   test('renders the correct content', () => {
     const history = createMemoryHistory()
     const { getByText } = render(
       <Router history={history}>
-        <App />
+        <Header />
       </Router>
     );
     getByText('Feeture🦶🏼Films');
-    getByText('Loading Movies...')
-  });
-
-  test('redirect from bad page', () => {
-    const history = createMemoryHistory()
-    const { getByText } = render(
-      <Router history={history}>
-        <App />
-      </Router>
-    );
-    history.push('/some/bad/route')
-    getByText('Feeture🦶🏼Films')
-    })
-})
+  })
+});
