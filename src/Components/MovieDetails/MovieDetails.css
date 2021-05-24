@@ -1,6 +1,6 @@
-/* * {
-  border: 1px solid red
-} */
+* {
+  /* border: 1px solid red */
+}
 
 @media screen and (min-device-width: 320px) {
   body {
