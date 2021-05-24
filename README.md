@@ -33,4 +33,5 @@ Visit the most trust recommendation resource for quality entertainment, Feeture 
 
 ## Authors
 Tyson McNutt [@tysnj](https://github.com/tysnj) 
+
 Melanie Daoheuang [@daomeow](https://github.com/daomeow)
