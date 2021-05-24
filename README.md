@@ -1,5 +1,6 @@
 # Feeture Films
 Visit the most trust recommendation resource for quality entertainment, Feeture Films!
+![Tooltip and responsive GIF](https://media.giphy.com/media/mX4cSRSf6xvBI4RA2g/giphy.gif)
 
 ## Overview 
 - React fundamentals 
