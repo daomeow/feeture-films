@@ -45,7 +45,7 @@ describe('List View Loading', () => {
   });
 
   it('should render a header component containing the app name', () => {
-    cy.get('header').contains('Rancid Tomatillos')
+    cy.get('header').contains('Feeture🦶🏼Films')
   });
 
   it('should  not see the home button', () => {
@@ -53,9 +53,8 @@ describe('List View Loading', () => {
       .should('not.be.visible') 
   });
 
-
   it('should render the list view', () => {
-    cy.contains('h1', 'Rancid Tomatillos')
+    cy.contains('h1', 'Feeture🦶🏼Films')
     cy.get('.card').should('have.length', 8);
     cy.get('.card').should('have.attr', 'href')
     cy.get('.movies-container').get('#694919').get('[alt="Money Plane"]')
