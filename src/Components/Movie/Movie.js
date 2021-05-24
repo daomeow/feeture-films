@@ -11,7 +11,7 @@ const Movie = ({ posterPath, title, onClick, id, onMouseEnter, onMouseMove, onMo
           className='poster' 
           src={posterPath}
           alt={title}
-          // onClick={() => onClick(id)}    
+          onClick={() => onClick(id)}    
           id={id}
           onMouseEnter={() => onMouseEnter(id)}
           onMouseMove={(event) => onMouseMove(event, id)}

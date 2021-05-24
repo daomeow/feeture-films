@@ -17,6 +17,7 @@
     background-color: black;
     box-shadow:  5px 5px 10px #8F3985,
     -5px -5px 10px #A675A1;
+    margin-bottom: 2em;
   } 
 
   .top-details {
@@ -40,10 +41,6 @@
     margin: 5px 0 0 10px;
   }
 
-  .details-data {
-    margin-left: 10px;
-  }
-
   .year-details,
   .minutes-details {
     border: 1px solid white;
@@ -65,7 +62,6 @@
   .genres {
     border: 1px solid white;
     width: 6em;
-    height: 3.5em;
     font-size: 14px;
     padding: 20px 14px 15px 7px;
     margin-top: 0;
@@ -77,6 +73,10 @@
 }
 
 @media screen and (min-width: 550px) {
+  .left-container {
+    height: 30em;
+  }
+
   .movie-details {
     padding: 0 52px;
   }
@@ -85,6 +85,7 @@
 @media screen and (min-width: 750px) {
   .left-container {
     width: 45em;
+    height: 40em;
     margin-left: 25px;
   } 
 
@@ -100,10 +101,6 @@
 
   .movie-rating {
     font-size: 25px;;
-  }
-
-  .details-data {
-    margin-left: 35px;
   }
 
   .year-details,
@@ -123,14 +120,27 @@
 }
 
 @media screen and (min-width: 900px) {
-  /* TO DO: update with Sass, same size as mobile view */
+  .left-container {
+    width: 45em;
+    height: 33.4em;
+    margin-left: 25px;
+  } 
+  
+  .movie-details {
+    padding: 0 40px;
+  }
+  
+  .general-info {
+    margin-left: 10px;
+  }
+
   .movie-poster {
-    width: 150px;
-    height: 200px;
+    width: 8em;
+    height: 11em;
   }
   
   .movie-title {
-    font-size: 25px;
+    font-size: 18px;
     margin: 25px 0 0 0;
   }
   
@@ -144,7 +154,9 @@
   }
   
   .over-view {
-    font-size: 15px;
+    font-size: 12px;
+    width: 20em;
+    margin-left: 28px;
   }
   
   .budget,
@@ -154,7 +166,7 @@
   }
 
   .backdrop {
-    width: 100%;
+    width: 35em;
     height: 535px;
     opacity:0.4;
     display: inline-block;
@@ -163,3 +175,21 @@
     margin-right: 25px;
   } 
 }
+
+@media screen and (min-width: 1050px) {
+  .left-container {
+    width: 25em;
+  }
+}
+ 
+@media screen and (min-width: 1300px) {
+  .left-container {
+    width: 27em;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .left-container {
+    width: 30em;
+  }
+}  

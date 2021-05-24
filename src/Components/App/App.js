@@ -75,14 +75,13 @@ export default class App extends Component {
               
               : <List 
               movies={this.state.movies} 
-              // onClick={this.handleClick}  
+              onClick={this.handleClick}  
               />
               )}
           />
           <Route exact path="/:id"
             render={({ match }) => {
               const id = match.params.id
-              this.handleClick(id)
               return (
                 !this.state.clickedMovie && !this.state.error ?
                   <h2>Loading Movie's Details...</h2>
@@ -90,12 +89,13 @@ export default class App extends Component {
                 : this.state.clickedMovie && !this.state.error &&
                 <MovieDetails
                   movieInfo={this.state.clickedMovie}
+          
                 />
                 )
               }}
           />
         </Switch>
-        <Redirect to="/" />
+        {/* <Redirect to="/" /> */}
       </main>
     )
   }
