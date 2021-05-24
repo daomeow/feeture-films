@@ -8,6 +8,17 @@ export const findMovie = (id) => {
     .then(response => response.json())
 }
 
+export const filterMoviesData = (list) => {
+  list.movies.map(movie => {
+    delete movie.average_rating
+    delete movie.release_date
+  })
+
+  return list.movies
+
+}
+
+
 export const formatOrder = (list) => list.sort((a, b) => (a.title > b.title) ? 1 : -1);
 
 export const formatRating = (rate) => Math.round(rate);
