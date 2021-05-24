@@ -7,11 +7,12 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { 
   getAllMovies, 
   findMovie,
+  filterMoviesData,
   formatOrder, 
   formatRating, 
   yearOnly, 
   formatAmount, 
-  formatList 
+  formatList
 } from '../../utilities';
 
 export default class App extends Component {
@@ -50,7 +51,8 @@ export default class App extends Component {
   componentDidMount() {
     getAllMovies()
       .then(data => {
-        this.setState({ movies: formatOrder(data.movies) })
+        const filteredData = filterMoviesData(data)
+        this.setState({ movies: formatOrder(filteredData) })
       })
       .catch(error => this.setState({ error: "Something went wrong" }))
   }               

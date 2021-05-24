@@ -1,5 +1,6 @@
-* {
-  /* border: 1px solid red */
+.movie-details {
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-device-width: 320px) {
@@ -17,6 +18,7 @@
     background-color: black;
     box-shadow:  5px 5px 10px #8F3985,
     -5px -5px 10px #A675A1;
+    margin: 0 10px 2em 10px
   } 
 
   .top-details {
@@ -26,8 +28,8 @@
   }
 
   .movie-poster { 
-    width: 150px;
-    height: 200px;
+    width: 7em;
+    height: 10em;
     margin-top: 25px;
   } 
 
@@ -40,10 +42,6 @@
     margin: 5px 0 0 10px;
   }
 
-  .details-data {
-    margin-left: 10px;
-  }
-
   .year-details,
   .minutes-details {
     border: 1px solid white;
@@ -52,12 +50,13 @@
 
   .over-view{
     padding: 0 10px;
-    margin-bottom: 10px;
+    margin: 10px 20px 10px 20px;
   }
 
   .bottom-container {
     display: flex;
     justify-content: space-around;
+    width: 18em;
   }
 
   .budget,
@@ -65,15 +64,29 @@
   .genres {
     border: 1px solid white;
     width: 6em;
-    height: 3.5em;
     font-size: 14px;
     padding: 20px 14px 15px 7px;
-    margin-top: 0;
+    margin: 0 5px 2em 5px;
   }
 
   .backdrop {
     display: none;
   }
+}
+
+@media screen and (min-width: 321px) {
+  .general-info {
+    margin-left: 5em;
+  }
+
+  .movie-details {
+    padding: 0 52px;
+  }
+
+  .bottom-container {
+    width: 100%;
+  }
+
 }
 
 @media screen and (min-width: 750px) {
@@ -88,43 +101,47 @@
   }
 
   .movie-title {
-    font-size: 3em;
     margin: 45px 0 0 45px;
   }
 
   .movie-rating {
-    font-size: 25px;;
-  }
-
-  .details-data {
-    margin-left: 35px;
+    font-size: 20px;
   }
 
   .year-details,
   .minutes-details {
     font-size: 20px
   }
-  
-  .over-view {
-    font-size: 25px;
-  }
 
   .budget,
   .revenue,
   .genres {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
 @media screen and (min-width: 900px) {
-  /* TO DO: update with Sass, same size as mobile view */
+  .left-container {
+    width: 45em;
+    height: 33.4em;
+    margin-right: 0;
+  } 
+  
+  .movie-details {
+    padding: 0 40px;
+  }
+  
+  .general-info {
+    margin-left: 10px;
+  }
+
   .movie-poster {
-    width: 150px;
-    height: 200px;
+    width: 8em;
+    height: 11em;
   }
   
   .movie-title {
-    font-size: 25px;
+    font-size: 18px;
     margin: 25px 0 0 0;
   }
   
@@ -138,7 +155,8 @@
   }
   
   .over-view {
-    font-size: 15px;
+    font-size: 12px;
+    margin-left: 28px;
   }
   
   .budget,
@@ -148,12 +166,41 @@
   }
 
   .backdrop {
-    width: 100%;
+    width: 30em;
     height: 535px;
     opacity:0.4;
     display: inline-block;
     box-shadow:  5px 5px 10px #8F3985,
     -5px -5px 10px #A675A1;
-    margin-right: 25px;
   } 
 }
+
+@media screen and (min-width: 1050px) {
+  .left-container {
+    width: 25em;
+  }
+
+  .backdrop {
+    width: 48em;
+  }
+}
+ 
+@media screen and (min-width: 1300px) {
+  .left-container {
+    width: 27em;
+  }
+
+  .backdrop {
+    width: 57em;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .left-container {
+    width: 30em;
+  }
+
+  .backdrop {
+    width: 65em;
+  }
+}  
