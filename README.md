@@ -28,6 +28,8 @@ Visit the most trusted recommendation resource for quality entertainment, Feetur
 - HTML
 - CSS
 
+![Movie details GIF](https://media.giphy.com/media/xlBuCbLQGG4wRbiMJE/giphy.gif)
+
 ## Next Steps
 - Add a feature to favorite movies
 - Add the ability to store users’ ratings for movies
