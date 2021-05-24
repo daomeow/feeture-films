@@ -24,7 +24,7 @@ export default class App extends Component {
     }
   }
   
-  handleClick = (id) => {
+  updateSelection = (id) => {
     findMovie(id)
       .then(movie => {
         this.setState({
@@ -73,14 +73,13 @@ export default class App extends Component {
               
               : <List 
               movies={this.state.movies} 
-              onClick={this.handleClick}  
+              onClick={this.updateSelection}  
               />
               )}
           />
           <Route exact path="/:id"
             render={({ match }) => {
               const id = match.params.id
-              this.handleClick(id)
               return (
                 !this.state.clickedMovie && !this.state.error ?
                   <h2>Loading Movie's Details...</h2>

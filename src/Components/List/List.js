@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Movie from "../Movie/Movie";
 import "./List.css";
-
 export default class List extends Component {
   constructor(props) {
     super(props);
@@ -12,9 +11,13 @@ export default class List extends Component {
     };
   }
 
+  handleClick = (id) => {
+    this.props.onClick(this.state.focusCard)
+  };
+
   handleEnter = (id) => {
     this.setState({ focusCard: id })
-  }
+  };
 
   handleMove = (e, id) => {
     const oX = (e.nativeEvent.offsetX)
@@ -26,7 +29,7 @@ export default class List extends Component {
     const tooltip = document.getElementById(`cursor-${id}`)
     tooltip.style.top = (this.state.y + 20) + "px";
     tooltip.style.left = (this.state.x + 20) + "px";
-  }
+  };
 
   handleLeave = () => {
     this.setState({ 
@@ -34,14 +37,14 @@ export default class List extends Component {
       x: 0,
       y: 0
     })
-  }
+  };
 
   render() {
     const movieCards = this.props.movies.map((movie) => (
       <Movie
         posterPath={movie.poster_path}
         title={movie.title}
-        onClick={this.props.onClick}
+        onClick={this.handleClick}
         id={movie.id}
         key={movie.id}
         onMouseEnter={this.handleEnter}
@@ -54,5 +57,3 @@ export default class List extends Component {
     );
   }
 }
-
-
