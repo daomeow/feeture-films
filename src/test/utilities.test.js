@@ -5,7 +5,8 @@ import {
   formatRating, 
   yearOnly, 
   formatAmount, 
-  formatList 
+  formatList,
+  filterMoviesData 
 } from './../utilities';
 
 import movieData from './../sample-data';
@@ -48,4 +49,12 @@ describe('Utilities', () => {
   it('should format the list of genres', () => {
     expect(formatList(['Action', 'Comedy', 'Horror'])).toEqual('Action, Comedy, Horror')
   });
+
+  it('should only have an id, poster image and a title', () => {
+    expect(filterMoviesData(movieData)[0]).toEqual({
+      id: 528085,
+      poster_path: 'https://image.tmdb.org/t/p/original//7D430eqZj8y3oVkLFfsWXGRcpEG.jpg', 
+      title: '2067'
+    })
+  })
 })
