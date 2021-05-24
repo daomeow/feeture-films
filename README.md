@@ -31,9 +31,10 @@ Visit the most trust recommendation resource for quality entertainment, Feeture 
 - Add a feature to favorite movies
 - Add the ability to store users’ ratings for movies
 
-## Goals
-- Solidify the. use of React and understanding of AJAX 
+## Team & Individual Goals
+- Solidify the use of React and understanding of AJAX 
 - Get a better handle on use of Cypress and React Router
+- Devote time to quality project planning 
 
 ## Authors
 - Tyson McNutt [@tysnj](https://github.com/tysnj) 
