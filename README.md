@@ -21,7 +21,7 @@ Visit the most trust recommendation resource for quality entertainment, Feeture 
 - Router
 - HTML
 - CSS
-
+![Movie details GIF](https://media.giphy.com/media/xlBuCbLQGG4wRbiMJE/giphy.gif)
 ## Next Steps
 - Add a feature to favorite movies
 - Add the ability to store users’ ratings for movies
