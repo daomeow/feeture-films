@@ -10,14 +10,13 @@ export const findMovie = (id) => {
 
 export const filterMoviesData = (list) => {
   list.movies.map(movie => {
-    delete movie.average_rating
-    delete movie.release_date
+    delete movie.average_rating;
+    delete movie.release_date;
+    delete movie.backdrop_path;
   })
 
   return list.movies
-
 }
-
 
 export const formatOrder = (list) => list.sort((a, b) => (a.title > b.title) ? 1 : -1);
 

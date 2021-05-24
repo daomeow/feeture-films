@@ -52,9 +52,8 @@ export default class App extends Component {
   componentDidMount() {
     getAllMovies()
       .then(data => {
-        // console.log(data)
-        console.log(filterMoviesData(data))
-        this.setState({ movies: formatOrder(data.movies) })
+        const filteredData = filterMoviesData(data)
+        this.setState({ movies: formatOrder(filteredData) })
       })
       .catch(error => this.setState({ error: "Something went wrong" }))
   }               
