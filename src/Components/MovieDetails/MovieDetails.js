@@ -3,7 +3,6 @@ import './MovieDetails.css';
 
 const MovieDetails =({ movieInfo }) => {
   const { poster_path, title, average_rating, release_date, backdrop_path, overview, budget, revenue, genres, tagline, runtime } = movieInfo; 
-  console.log(poster_path)
 
   return (
     <div className='movie-details'>

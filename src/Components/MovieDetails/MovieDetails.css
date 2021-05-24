@@ -51,7 +51,7 @@
   .bottom-container {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 18em;
   }
 
   .budget,
@@ -69,9 +69,17 @@
   }
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 321px) {
+  .general-info {
+    margin-left: 5em;
+  }
+
   .movie-details {
     padding: 0 52px;
+  }
+
+  .bottom-container {
+    width: 100%;
   }
 
 }
@@ -79,7 +87,6 @@
 @media screen and (min-width: 750px) {
   .left-container {
     width: 45em;
-    height: 40em;
     margin-left: 25px;
   } 
 
@@ -89,27 +96,22 @@
   }
 
   .movie-title {
-    font-size: 3em;
     margin: 45px 0 0 45px;
   }
 
   .movie-rating {
-    font-size: 25px;;
+    font-size: 20px;
   }
 
   .year-details,
   .minutes-details {
     font-size: 20px
   }
-  
-  .over-view {
-    font-size: 25px;
-  }
 
   .budget,
   .revenue,
   .genres {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
@@ -149,7 +151,6 @@
   
   .over-view {
     font-size: 12px;
-    width: 20em;
     margin-left: 28px;
   }
   

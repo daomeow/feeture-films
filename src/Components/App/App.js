@@ -89,13 +89,12 @@ export default class App extends Component {
                 : this.state.clickedMovie && !this.state.error &&
                 <MovieDetails
                   movieInfo={this.state.clickedMovie}
-          
                 />
                 )
               }}
           />
         </Switch>
-        {/* <Redirect to="/" /> */}
+        <Redirect to="/" />
       </main>
     )
   }
