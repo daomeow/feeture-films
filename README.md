@@ -32,6 +32,5 @@ Visit the most trust recommendation resource for quality entertainment, Feeture 
 - Add the ability to store users’ ratings for movies
 
 ## Authors
-Tyson McNutt [@tysnj](https://github.com/tysnj) 
-
-Melanie Daoheuang [@daomeow](https://github.com/daomeow)
+- Tyson McNutt [@tysnj](https://github.com/tysnj) 
+- Melanie Daoheuang [@daomeow](https://github.com/daomeow)
