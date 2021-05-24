@@ -1,26 +1,36 @@
 # Feeture Films
-Simple overview of use/purpose.
+Visit the most trust recommendation resource for quality entertainment, Feeture Films!
+
+## Overview 
+- React fundamentals 
+- Learn how to test React components & asynchronous JS
+- Create a multi-page UX using Router 
 
 ## Description
-An in-depth paragraph about your project and overview of use.
-## Getting Started
-### Dependencies
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
-### Installing
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+- Feeture Films provides a user friendly experience to research current and past films
+- Click on a film to expand the movie’s details
+- Return to the homepage with the home button, in the upper left corner 
+
 ## Setup
 - Fork this project to your own Github account
 - Clone the repository to your local machine
 - `cd` into the project
-- `open index.html` to open GitHub pages
-## Help
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+- `npm start` to open application’s page
+
+## Technologies Used
+- React
+- Javascript
+- React Testing Library 
+- Cypress
+- Mocha & Chai 
+- Router
+- HTML
+- CSS
+
 ## Next Steps
+- Add a feature to favorite movies
+- Add the ability to store users’ ratings for movies
+
 ## Authors
 Tyson McNutt [@tysnj](https://github.com/tysnj) 
 Melanie Daoheuang [@daomeow](https://github.com/daomeow)
