@@ -1,5 +1,6 @@
 describe('The Test', () => {
   beforeEach(() => {
+    cy.interceptMovies()
     cy.interceptSingleMovie()
   });
 
@@ -19,18 +20,22 @@ describe('The Test', () => {
   });
 
 describe('Movie Details Loading', () => {
-
+  beforeEach(() => {
+    cy.interceptMovies()
+  });
+  
   it('should render a loading message while fetching movies', () => {
-    cy.visit('/')
     cy.get('.movies-container').get('#694919').click()
     cy.get('h2').contains(`Loading Movie's Details...`)
   });
 
   it('should render a header component containing the app name', () => {
+    cy.interceptSingleMovie()
     cy.get('header').contains('Feeture🦶🏼Films')
   });
 
   it('should see the home button', () => {
+    cy.interceptSingleMovie()
     cy.get('.fa-home')
       .should('be.visible') 
   });
@@ -49,22 +54,8 @@ describe('Movie Details Loading', () => {
   })
 
   it('should have a button take user to main page', () => {
+    cy.interceptSingleMovie()
     cy.get('.fa-home').click()
     cy.url().should('eq', 'http://localhost:3000/' )
   });
 })
-
-describe('Movie Details Not Loading', () => {
-  beforeEach(() => {
-    cy.visit('/')
-    cy.get('.movies-container').get('#694919').click()
-  });
-
-  it('should redirect the user when they access an invalid URL', () => {
-    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/69420', {
-      statusCode: 200
-    })
-      .visit('http://localhost:3000/foo')
-      cy.url().should('eq', 'http://localhost:3000/' )
-  })
-});

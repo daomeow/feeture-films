@@ -8,7 +8,7 @@ Cypress.Commands.add('interceptMovies', () => {
 })
 
 Cypress.Commands.add('interceptSingleMovie', () => {
+  cy.get('.movies-container').get('#694919').click()
   cy.intercept(`${baseURL}/694919`, singleMovie).as('getSingleStub')
-    .visit('http://localhost:3000/')
-    cy.get('.movies-container').get('#694919').click()
+    // .visit('http://localhost:3000/')
 })
