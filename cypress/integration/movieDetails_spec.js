@@ -60,22 +60,6 @@ describe('Movie Details Not Loading', () => {
     cy.get('.movies-container').get('#694919').click()
   });
 
-  it('should display a specific error message when fetch yields a 500 status', () => {
-    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
-      statusCode: 500
-    })
-      .get('h2')
-      .contains('Something went wrong')
-  });
-
-  it('should display a specific error message when fetch yields a 404 status', () => {
-    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
-      statusCode: 404
-    })
-      .get('h2')
-      .contains('Something went wrong')
-  });
-
   it('should redirect the user when they access an invalid URL', () => {
     cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/69420', {
       statusCode: 200
