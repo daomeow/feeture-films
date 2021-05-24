@@ -80,7 +80,7 @@ export default class App extends Component {
           <Route exact path="/:id"
             render={({ match }) => {
               const id = match.params.id
-              this.handleClick(id)
+              // this.handleClick(id)
               return (
                 !this.state.clickedMovie && !this.state.error ?
                   <h2>Loading Movie's Details...</h2>
