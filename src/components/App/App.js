@@ -81,7 +81,6 @@ export default class App extends Component {
           />
           <Route exact path="/:id"
             render={({ match }) => {
-              const id = match.params.id
               return (
                 !this.state.clickedMovie && !this.state.error ?
                   <h2>Loading Movie's Details...</h2>
