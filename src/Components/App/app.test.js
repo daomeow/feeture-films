@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 
 import App from './App';
@@ -27,5 +26,5 @@ describe('App Component', () => {
     );
     history.push('/some/bad/route')
     getByText('Feeture🦶🏼Films')
-    })
+    });
 })
